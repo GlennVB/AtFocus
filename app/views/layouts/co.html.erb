@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>@Focus</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%# javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<%= render "layouts/navbar" %>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<%= render "business_dashes/layouts/sidebar" %>
+				</div>
+				<div class="col-md-10">
+					<%= yield %>
+				</div>
+				<% if notice != nil && notice != "" %>
+				<script><%= add_gritter(notice, :title => "Notification") %></script>
+				<% end %>
+				<% if alert != nil && alert != "" %>
+				<script><%= add_gritter(alert, :title => "Alert") %></script>
+				<% end %>
+			</div>
+		</div>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</body>
+</html>

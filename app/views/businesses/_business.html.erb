@@ -1,0 +1,22 @@
+<!-- A company's personal card -->
+<div class="panel panel-person">
+	<div class="panel-body">
+		<div class="pull-left">
+			<img src="http://placehold.it/80x80&text=Avatar" class="avatar">
+			</div>
+		<div class="pull-left person-info">
+			<strong><%= @business.legalName %></strong>
+			
+			<br><%= @business.email %>
+			<br><%= @business.telephone %><% if @business.faxNumber %>&nbsp;<%= @business.faxNumber %><% end %>
+		</div>
+	</div>
+	<div class="panel-footer">
+		<ul class="person-links text-center">
+			<li><a href="#">Profile</a></li>&nbsp;|&nbsp;
+			<li><a href="#">Blogs</a></li>&nbsp;|&nbsp;
+			<li><a href="#">Activity</a></li>&nbsp;|&nbsp;
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+</div>

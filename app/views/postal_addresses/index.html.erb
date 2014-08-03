@@ -1,0 +1,33 @@
+<h1>Listing postal_addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Addresscountry</th>
+      <th>Addresslocality</th>
+      <th>Addressregion</th>
+      <th>Postalcode</th>
+      <th>Streetaddress</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postal_addresses.each do |postal_address| %>
+      <tr>
+        <td><%= postal_address.addressCountry %></td>
+        <td><%= postal_address.addressLocality %></td>
+        <td><%= postal_address.addressRegion %></td>
+        <td><%= postal_address.postalCode %></td>
+        <td><%= postal_address.streetAddress %></td>
+        <td><%= link_to 'Show', postal_address %></td>
+        <td><%= link_to 'Edit', edit_postal_address_path(postal_address) %></td>
+        <td><%= link_to 'Destroy', postal_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Postal address', new_postal_address_path %>

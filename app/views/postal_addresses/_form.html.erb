@@ -1,0 +1,37 @@
+<%= form_for(@postal_address) do |f| %>
+  <% if @postal_address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@postal_address.errors.count, "error") %> prohibited this postal_address from being saved:</h2>
+
+      <ul>
+      <% @postal_address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :addressCountry %><br>
+    <%= f.text_field :addressCountry %>
+  </div>
+  <div class="field">
+    <%= f.label :addressLocality %><br>
+    <%= f.text_field :addressLocality %>
+  </div>
+  <div class="field">
+    <%= f.label :addressRegion %><br>
+    <%= f.text_field :addressRegion %>
+  </div>
+  <div class="field">
+    <%= f.label :postalCode %><br>
+    <%= f.text_field :postalCode %>
+  </div>
+  <div class="field">
+    <%= f.label :streetAddress %><br>
+    <%= f.text_field :streetAddress %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

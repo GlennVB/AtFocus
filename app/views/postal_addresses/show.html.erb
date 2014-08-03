@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Addresscountry:</strong>
+  <%= @postal_address.addressCountry %>
+</p>
+
+<p>
+  <strong>Addresslocality:</strong>
+  <%= @postal_address.addressLocality %>
+</p>
+
+<p>
+  <strong>Addressregion:</strong>
+  <%= @postal_address.addressRegion %>
+</p>
+
+<p>
+  <strong>Postalcode:</strong>
+  <%= @postal_address.postalCode %>
+</p>
+
+<p>
+  <strong>Streetaddress:</strong>
+  <%= @postal_address.streetAddress %>
+</p>
+
+<%= link_to 'Edit', edit_postal_address_path(@postal_address) %> |
+<%= link_to 'Back', postal_addresses_path %>

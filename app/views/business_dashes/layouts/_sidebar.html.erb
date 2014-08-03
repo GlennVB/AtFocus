@@ -1,0 +1,43 @@
+
+<div class="clearfix"></div>
+<div class="sidebar">
+	<h1><%= @business.legalName %></h1>
+	<ul class="nav nav-tabs nav-stacked" role="tablist">
+		<li>
+			<%= link_to @business.businessDash do %><i class="fa fa-home fa-fw"></i>&nbsp;Home<% end %>
+		</li>
+	</ul>
+	<% if Employee.where(business: @business, person: current_account.profile).first.modules.include?(:administration) %>
+	<h1>Administration</h1>
+	<ul class="nav nav-tabs nav-stacked" role="tablist">
+		<li>
+			<%= link_to edit_business_dash_path(@business.businessDash) do %><i class="fa fa-dashboard fa-fw"></i>&nbsp;Dashboard<% end %>
+		</li>
+		<li>
+			<%= link_to edit_business_dash_path(@business.businessDash) do %><i class="fa fa-envelope fa-fw"></i>&nbsp;Messages<% end %>
+		</li>
+	</ul>
+	<% end %>
+	<% if Employee.where(business: @business, person: current_account.profile).first.modules.include?(:employees) %>
+	<h1>Employee's</h1>
+	<ul class="nav nav-tabs nav-stacked" role="tablist">
+		<li>
+			<%= link_to business_employees_path(@business) do %><i class="fa fa-users fa-fw"></i>&nbsp;Manage<% end %>
+		</li>
+		<li>
+			<a href="#"><i class="fa fa-plus fa-fw"></i>&nbsp;Add employee</a>
+		</li>
+	</ul>
+	<% end %>
+	<% if Employee.where(business: @business, person: current_account.profile).first.modules.include?(:customers) %>
+	<h1>Customers</h1>
+	<ul class="nav nav-tabs nav-stacked" role="tablist">
+		<li>
+			<%= link_to business_customers_path(@business) do %><i class="fa fa-users fa-fw"></i>&nbsp;Manage<% end %>
+		</li>
+		<li>
+			<%= link_to business_customers_path(@business) do %><i class="fa fa-plus fa-fw"></i>&nbsp;Add customer<% end %>
+		</li>
+	</ul>
+	<% end %>
+</div>

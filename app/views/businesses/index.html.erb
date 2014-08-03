@@ -1,0 +1,10 @@
+<div class="row">
+<% Business.all.each do |business| %>
+    <% @business = business %>
+    <div class="col-md-4">
+	<%= render partial: @business %>
+	</div>
+<% end %>
+</div>
+
+<%= link_to 'New Business', new_business_path %>

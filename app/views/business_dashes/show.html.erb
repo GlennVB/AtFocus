@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-12">
+		<h1><%= @business_dash.title %></h1>
+		<p class="lead">
+			<%= @business_dash.description %>
+		</p>
+	</div>
+	<div class="col-md-8">
+		</div>
+	<div class="col-md-4">
+		<div class="content-container">
+			<h1>Messages</h1>
+			<% @business.messages.each do |message| %>
+				<div class="message">
+					<div class="message-heading">
+						<%= message.title %>
+					</div>
+					<div class="message-body">
+						<p><%= message.body.length > 150 ? message.body[0..150].html_safe + "&nbsp;".html_safe + link_to("Read more ...",message) : message.body.html_safe %></p>
+					</div>
+					<div class="message-footer">
+						Posted by: <%= link_to message.author.name, message.author %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

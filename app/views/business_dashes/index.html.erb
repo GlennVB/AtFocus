@@ -1,0 +1,29 @@
+<h1>Listing business_dashes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Business</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @business_dashes.each do |business_dash| %>
+      <tr>
+        <td><%= business_dash.title %></td>
+        <td><%= business_dash.description %></td>
+        <td><%= business_dash.business_id %></td>
+        <td><%= link_to 'Show', business_dash %></td>
+        <td><%= link_to 'Edit', edit_business_dash_path(business_dash) %></td>
+        <td><%= link_to 'Destroy', business_dash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Business dash', new_business_dash_path %>

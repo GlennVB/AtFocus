@@ -1,0 +1,10 @@
+<div class="row">
+<% Person.all.each do |person| %>
+    <% @person = person %>
+    <div class="col-md-4">
+	<%= render partial: @person %>
+	</div>
+<% end %>
+</div>
+
+<%= link_to 'New Person', new_person_path %>

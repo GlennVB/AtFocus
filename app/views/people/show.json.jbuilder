@@ -1,0 +1,1 @@
+json.extract! @person, :id, :givenName, :familyName, :additionalName, :address, :birthDate, :email, :faxNumber, :gender, :honorificPrefix, :honorificSuffic, :nationality, :telephone, :created_at, :updated_at

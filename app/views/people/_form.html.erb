@@ -1,0 +1,62 @@
+<%= form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+	<div class="form-input col-md-1">
+    <%= f.select(:honorificPrefix, [['Empty', ''],['Mr. ', 'Mr. '],['Dr. ', 'Dr. '],['Mrs. ', 'Mrs. ']], {}, {:class => "form-control"}) %>
+  </div>
+  <div class="form-input col-md-1">
+  	    <%= f.select(:honorificSuffix, [['Empty', ''],['M.D. ', 'M.D. '],['PhD', 'PhD'],['MSCSW', 'MSCSW']], {}, {:class => "form-control"}) %>
+
+  	</div>
+  <div class="form-input col-md-4">
+    <%= f.text_field :givenName, :class => "form-control", :placeholder => "Given Name" %>
+  </div>
+  <div class="form-input col-md-2">
+    <%= f.text_field :additionalName, :class => "form-control", :placeholder => "Additional Name" %>
+  </div>
+  <div class="form-input col-md-4">
+    <%= f.text_field :familyName, :class => "form-control", :placeholder => "Family Name" %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-input col-md-6">
+    <%= f.label :birthDate %><br>
+    <%= f.date_select :birthDate,{:order => [:day, :month, :year], :start_year => 1920, :end_year => 2013}, :class => "form-control", :style => "display: inline; width: 150px;" %>
+  </div>
+  <div class="form-input col-md-6">
+    <%= f.label :gender %><br>
+    <%= f.select(:gender, [['Male', 'Male'],['Female', 'Female']], {},{:class => "form-control"}) %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-input col-md-12">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, :class => "form-control" %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-input col-md-6">
+    <%= f.label :telephone %><br>
+    <%= f.text_field :telephone, :class => "form-control" %>
+  </div>
+  <div class="form-input col-md-6">
+    <%= f.label :faxNumber %><br>
+    <%= f.text_field :faxNumber, :class => "form-control" %>
+  </div>
+  </div>
+
+  <div class="actions pull-right">
+    <%= f.submit "Submit", :class => "btn btn-default btn-block" %>
+  </div>
+  <div class="clearfix"></div>
+<% end %>

@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require gritter
+ */
+
+.navbar-brand :hover{
+	background-color: #FFF;
+}
+
+.navbar-brand:hover, .navbar-brand:focus{
+		background-color: #FFF !important;
+}
+
+#account-box{
+	border-bottom: 1px solid #FFF;
+	background-color: #DDD;
+	padding: 10px 5px 5px 5px;
+}
+
+#account-box .avatar{
+	margin: 5px;
+	height: 80px;
+	width: 80px;
+	border: 2px solid #FFF;
+	border-radius: 3px;
+	float:left;
+}
+
+#account-box p{
+	margin: 5px;
+	border-left: 3px solid #ccc;
+	padding-left: 10px;
+	height: 80px;
+	float:left;
+}
+
+.navbar{
+	border-radius: 0px !important;
+	border-bottom: 2px solid #DDD !important;
+}
+
+.panel-person{
+	border: 1px solid #DDD !important;
+	padding: 0;
+}
+
+.panel-person img{
+	margin: 5px;
+}
+
+.panel-person .person-info{
+	margin: 5px 10px 5px 5px;
+}
+
+.panel-person .panel-footer ul{
+	list-style-type: none;
+}
+
+.panel-person .panel-footer ul li{
+	display:inline;
+}
+
+.container{
+	overflow: hidden;
+	width: 100% !important;
+	padding: 0 !important;
+}
+
+#notification-bar{
+	border-left: 1px solid #DDD;
+}
+
+.sidebar h1{
+	font-size: 21px;
+	text-align: center;
+	border-bottom: 1px solid #DDD;
+	margin-top: 10px;
+	padding-bottom: 2px;
+}
+
+h1{
+	padding-bottom: 4px;
+	border-bottom: 1px solid #DDD;
+}
+
+.tab-content{
+	border: 1px solid #DDD;
+	border-top: 0;
+	border-radius: 0 0 4px 4px;
+	padding: 20px;
+}
+
+.actions{
+	margin-top: 15px;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color: #428BCA !important;
+}
+
+body {
+	padding-top: 50px;
+	padding-right: 15px;
+	font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif !important;
+}
+
+.content-container{
+	border: 1px solid #DDD;
+	border-radius: 4px;
+}
+
+.content-container h1{
+	font-size: 22px;
+	border-bottom: 1px solid #DDD;
+	margin: 5px 0;
+	padding: 5px 15px;
+}
+
+.message{
+	border: 1px solid #666;
+	border-radius: 4px;
+	padding: 0;
+	margin: 10px;
+}
+
+.message-heading{
+	font-weight: bold;
+	padding: 10px 5px 5px 5px;
+	margin: 0;
+	border-bottom: 1px dashed #666;
+}
+
+.message-body{
+	padding: 15px;
+}
+
+.message-footer{
+	color: #666;
+	border-top: 1px dashed #666;
+	padding: 10px 10px 10px 10px;
+}
